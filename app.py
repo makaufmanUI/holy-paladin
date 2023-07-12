@@ -44,7 +44,7 @@ def main(player, fight):
     mana_saved = 0
     for spell in casts_that_removed_soul_preserver_buff:
         if spell['ability']['name'] in spell_costs:
-            mana_saved += spell_costs[spell['ability']['name']]
+            mana_saved += min(800, spell_costs[spell['ability']['name']])
 
     fight_length = fight.duration.seconds
     mana_per5_equivalent = (mana_saved / fight_length) * 5
