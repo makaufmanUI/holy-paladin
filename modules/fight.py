@@ -131,7 +131,7 @@ class Fight:
         return self._boss_id
     
     @property
-    def boss_percentage(self) -> int|float:
+    def boss_percentage(self) -> float:
         """
         Not sure what this is.
         """
@@ -152,14 +152,14 @@ class Fight:
         return self._end_time
     
     @property
-    def fight_percentage(self) -> int|float:
+    def fight_percentage(self) -> float:
         """
         Not sure what this is.
         """
         return self._fight_percentage
     
     @property
-    def id(self, as_int: bool=False) -> int|str:
+    def id(self, as_int: bool=False) -> int:
         """
         The ID of the fight, with respect to the report, 𝒏𝒐𝒕 what identifies the boss.
         """
@@ -215,18 +215,7 @@ class Fight:
         return self._data["raid"]   # type: ignore
     
 
-    def _get_data(self) -> dict[str,
-            float |
-            dict[ str,int|str|bool ] |
-            list[ dict[str,int|str] ] |
-            list[ dict[str,list|str|bool|int] ] |
-            dict[ str,float|list[dict[str,int|float|str|dict[str,int|str|bool]]] ] |
-            dict[ str,int|list[dict[str,int|str|bool]]|str|list[dict[str,int|str]] ] |
-            list[ dict[str,int|float|dict[str,int|str]|list[dict[str,bool|float|str|int]]] ] |
-            list[ dict[str,bool|str|list[int]|dict[str,list[str]|str|dict[str,list[int]]]|list[str]] ] |
-            list[ dict[str,bool|list[dict[str,bool|str]]|dict[str,bool]|str|dict[str,bool|float|str]] ] |
-            list[ dict[str,list[dict[str,int|list[dict[str,int|float|str]]]]|bool|list[dict[str,int|float|str]]|list|dict[str,int|str]|str|dict[str,int|list[dict[str,int|dict[str,int|str|list[dict[str,int]]]]]|list[int]|list[dict[str,int|str]]]|float] ]
-        ]:
+    def _get_data(self) -> dict:
         """
         Gets raw data for the fight from the 𝘄𝗶𝗽𝗲𝗳𝗲𝘀𝘁.𝗴𝗴 API.
 
