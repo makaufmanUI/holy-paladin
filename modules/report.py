@@ -252,7 +252,7 @@ class Report:
         raise ValueError(f"Player with name {name} not found in report {self._code}")
     
 
-    def get_player_by_guid(self, guid: int|str) -> Player:
+    def get_player_by_guid(self, guid: str) -> Player:
         """
         Gets a player from the report.
 
@@ -272,7 +272,7 @@ class Report:
         raise ValueError(f"Player with GUID {guid} not found in report {self._code}")
     
 
-    def get_player_by_report_id(self, report_id: int|str) -> Player:
+    def get_player_by_report_id(self, report_id: str) -> Player:
         """
         Gets a player from the report.
 
@@ -329,7 +329,7 @@ class Report:
         raise ValueError(f"Enemy NPC with name {name} not found in report {self._code}")
     
 
-    def get_enemy_by_guid(self, guid: int|str) -> Enemy:
+    def get_enemy_by_guid(self, guid: str) -> Enemy:
         """
         Gets an enemy NPC from the report.
 
@@ -349,7 +349,7 @@ class Report:
         raise ValueError(f"Enemy NPC with GUID {guid} not found in report {self._code}")
     
 
-    def get_enemy_by_report_id(self, report_id: int|str) -> Enemy:
+    def get_enemy_by_report_id(self, report_id: str) -> Enemy:
         """
         Gets an enemy NPC from the report.
 
