@@ -171,7 +171,7 @@ class Report:
         return self._players
     
 
-    def get_fight_by_report_id(self, fight_id: int|str) -> Fight:
+    def get_fight_by_report_id(self, fight_id: str) -> Fight:
         """
         Gets a fight from the report.
 
@@ -214,7 +214,7 @@ class Report:
         raise ValueError(f"Fight with boss name {boss_name} not found in report {self._code}")
     
 
-    def get_fight_by_boss_id(self, boss_id: int|str) -> Fight:
+    def get_fight_by_boss_id(self, boss_id: str) -> Fight:
         """
         Gets a fight from the report.
 
