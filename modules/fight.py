@@ -84,8 +84,8 @@ class Fight:
     """
     """
     def __init__(self, 
-                 report_code: str, boss_id: str|int, boss_percentage: int|float,
-                 difficulty: int, end_time: int, fight_percentage: int|float, id: int|str,
+                 report_code: str, boss_id: str, boss_percentage: int,
+                 difficulty: int, end_time: int, fight_percentage: int, id: int,
                  kill: bool, boss_name: str, partial: int, size: int, start_time: int):
         self._report_code = report_code
         self._boss_id = str(boss_id) if isinstance(boss_id, int) else boss_id
