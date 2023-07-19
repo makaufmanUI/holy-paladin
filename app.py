@@ -243,7 +243,8 @@ if st.session_state["report_code"] != "":
             with c3:
                 st.markdown(f"### **{len(spell_cast_events):,.0f}** :violet[total spells cast]")
             with c4:
-                st.markdown(f"### **{num_procs/len(spell_cast_events)*100:.2f}%** :violet[of which triggered Healing Trance]")
+                if len(spell_cast_events) > 0:
+                    st.markdown(f"### **{num_procs/len(spell_cast_events)*100:.2f}%** :violet[of which triggered Healing Trance]")
 
             # st.markdown("#### ")
             
