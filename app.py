@@ -169,7 +169,11 @@ if st.session_state["report_code"] != "":
                             players2[p] = []
                         players2[p].append(f.boss_name + ' (' + to_MMSS(f.duration.seconds) + ')')
         except:
-            players2 = players
+            for p in players:
+                for f in fights_:
+                    if p not in players2:
+                        players2[p] = []
+                    players2[p].append(f.boss_name + ' (' + to_MMSS(f.duration.seconds) + ')')
 
         fight_name_select_column, player_name_select_column, submit_button_column = st.columns([1,1,1])
 
