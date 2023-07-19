@@ -160,13 +160,16 @@ if st.session_state["report_code"] != "":
         fights_ = [st.session_state["report"].get_fight_by_boss_name(f) for f in fights]
 
         players2 = {}
-        for p in players:
-            for f in fights_:
-                talents = get_talents(st.session_state["report"], f, p)
-                if max(talents) == talents[0]:  # most points in holy
-                    if p not in players2:
-                        players2[p] = []
-                    players2[p].append(f.boss_name + ' (' + to_MMSS(f.duration.seconds) + ')')
+        try:
+            for p in players:
+                for f in fights_:
+                    talents = get_talents(st.session_state["report"], f, p)
+                    if max(talents) == talents[0]:  # most points in holy
+                        if p not in players2:
+                            players2[p] = []
+                        players2[p].append(f.boss_name + ' (' + to_MMSS(f.duration.seconds) + ')')
+        except:
+            players2 = players
 
         fight_name_select_column, player_name_select_column, submit_button_column = st.columns([1,1,1])
 
